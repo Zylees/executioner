@@ -45,7 +45,7 @@ repeat
 	end)
 
 
-until Target.Character.Humanoid.Dead or Player.Character.Humanoid.Dead or Player.Character:FindFirstChild("HumanoidRootPart") == nil
+until Target.Character.Humanoid:GetState() == Enum.HumanoidStateType.Dead or Target.Character.Humanoid == nil or Target == nil or Target.Character == nil or Player.Character:FindFirstChild("HumanoidRootPart") == nil or Player.Character.Humanoid:GetState() == Enum.HumanoidStateType.Dead
 
 print("Executed")
 end
