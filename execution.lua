@@ -1,4 +1,4 @@
---updated
+--fr fixed
 
 local module = {}
 
@@ -39,15 +39,13 @@ repeat
 		
 		wait(2.5)
 		
-		Character.Head:Remove();
-		Humanoid.BreakJointsOnDeath = false;
-		Humanoid.Health = 0;
+		Humanoid:ChangeState(Enum.HumanoidStateType.Dead)
 		
 		wait()
 	end)
 
 
-until Target.Character.Humanoid.Dead or Player.Character.Humanoid.Dead
+until Target.Character.Humanoid.Dead or Player.Character.Humanoid.Dead or Player.Character:FindFirstChild("HumanoidRootPart") == nil
 
 print("Executed")
 end
