@@ -1,3 +1,5 @@
+--updated
+
 local module = {}
 
 function module:executePlayer(target)
@@ -9,11 +11,13 @@ repeat
 	pcall(function()
 		task.spawn(function()
 			headSit = game.RunService.Heartbeat:Connect(function()
+								pcall(function()
 				if game.Players:FindFirstChild(Target.Name) and Target.Character ~= nil and Target.Character.HumanoidRootPart and Player.Character and Player.Character:FindFirstChildOfClass('Humanoid').Sit == true then
 					Player.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0),0)* CFrame.new(0,1.6,0.4)
 				else
 					headSit:Disconnect()
 				end
+									end)
 			end)
 		end)
 		
@@ -35,7 +39,9 @@ repeat
 		
 		wait(2.5)
 		
-		game.Players.LocalPlayer.Character.Head:Destroy()
+		Character.Head:Remove();
+		Humanoid.BreakJointsOnDeath = false;
+		Humanoid.Health = 0;
 		
 		wait()
 	end)
