@@ -1,4 +1,4 @@
---fr fixed
+--fr fixed F1
 
 local module = {}
 
@@ -26,7 +26,7 @@ repeat
 		local Flinger = Instance.new("BodyAngularVelocity")
 		Flinger.Name = "gbafd9h134576hfad913456"
 		Flinger.Parent = Player.Character.HumanoidRootPart
-		Flinger.AngularVelocity = Vector3.new(0,-9e20,0)
+		Flinger.AngularVelocity = Vector3.new(0,-99999,0)
 		Flinger.MaxTorque = Vector3.new(0,math.huge,0)
 		Flinger.P = math.huge
 		for i, v in next, Player.Character:GetChildren() do
